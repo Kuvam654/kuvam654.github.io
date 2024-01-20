@@ -6,40 +6,107 @@
     <title>Feedback Rewards System</title>
     <style>
         body {
-            background-color: #303030; /* Light black background */
-            color: #ffffff; /* White text */
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000000; /* Black background for the entire body */
+            color: #fff; /* White text color */
         }
         header {
-            background-color: #1a1a1a; /* Darker header color */
-            padding: 10px;
-            text-align: center;
-        }
-        main {
+            background-color: #000000; /* Black */
             padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            margin: 0;
+        }
+        h1 {
+            color: #008080; /* Castleton Green */
+            font-size: 3em; /* Slightly larger font size */
+            margin: 0;
+        }
+        .welcome-section {
+            background-color: #1a1a1a; /* Light Black */
+            padding: 40px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .welcome-text {
+            color: #008080; /* Castleton Green */
+            margin-bottom: 20px;
+        }
+        .start-button {
+            background-color: #008080; /* Castleton Green */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .start-button:hover {
+            background-color: #006666; /* Darker Castleton Green on hover */
+        }
+        .info-section {
+            background-color: #1a1a1a; /* Light Black */
+            padding: 40px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+        }
+        .info-text {
+            margin-bottom: 20px;
         }
         footer {
-            background-color: #1a1a1a; /* Darker footer color */
+            background-color: #1a1a1a; /* Light Black */
             padding: 10px;
             text-align: center;
+            width: 100%;
             position: fixed;
             bottom: 0;
-            width: 100%;
+            z-index: 1;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Feedback Rewards System</h1>
+        <h1>ANVESHANA</h1>
     </header>
-    <main>
-        <p>Welcome to our feedback rewards system! Provide your valuable feedback and get rewarded on the Solana blockchain.</p>
-        <!-- Your feedback form goes here -->
-    </main>
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <h2>Welcome to our Feedback Rewards System</h2>
+            <p>Provide your valuable feedback and get rewarded on the Solana blockchain.</p>
+        </div>
+        <a class="start-button" href="#feedback-form">Get Started</a>
+    </div>
+    <div class="info-section">
+        <div class="info-text">
+            <p>This is the information section. You can add your content here.</p>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 Feedback Rewards System</p>
     </footer>
 </body>
 </html>
+

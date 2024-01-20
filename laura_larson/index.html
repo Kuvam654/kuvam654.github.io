@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+	<title>Form Reviews</title>
+</head>
+<body>
+
+	<div class="wrapper">
+		<h3>Lorem ipsum dolor sit amet.</h3>
+		<form action="#">
+			<div class="rating">
+				<input type="number" name="rating" hidden>
+				<i class='bx bx-star star' style="--i: 0;"></i>
+				<i class='bx bx-star star' style="--i: 1;"></i>
+				<i class='bx bx-star star' style="--i: 2;"></i>
+				<i class='bx bx-star star' style="--i: 3;"></i>
+				<i class='bx bx-star star' style="--i: 4;"></i>
+			</div>
+			<textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
+			<div class="btn-group">
+				<button type="submit" class="btn submit">Submit</button>
+				<button class="btn cancel">Cancel</button>
+			</div>
+		</form>
+	</div>
+    <button id="connect-button" style="z-index: 1000;">Connect Metamask</button>
+    <script>
+      document.getElementById('connect-button').addEventListener('click', event => {
+        let account;
+        let button = event.target;
+        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+          account = accounts[0];
+          console.log(account);
+        //   button.textContent = account;
+
+          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
+            console.log(result);
+            let wei = parseInt(result,16);
+            let balance = wei / (10**18);
+            console.log(balance + " ETH");
+          });
+        });
+      });
+    </script>
+  
+</body>
+</html>

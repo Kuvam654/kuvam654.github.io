@@ -12,7 +12,6 @@ body {
     z-index: 1;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-
     border: solid white;
 }
 
@@ -56,7 +55,7 @@ body {
 
 .slideshow-container {
     width: 100%;
-    height: 870px; /* Adjust the height as needed */
+    height: 700px; /* Adjust the height as needed */
     padding-top: 50px; /* Adjust padding to ensure enough space */
     margin: 0; /* Ensure no margin is added */
     position: relative;

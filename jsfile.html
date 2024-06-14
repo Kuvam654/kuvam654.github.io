@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arctic Monkeys Fanpage</title>
+    <link rel="stylesheet" href="cssfile.css">
+</head>
+<body>
+    <div class="class1">
+        <ul id="ul1">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#albums">Albums</a></li>
+            <li><a href="#Concerts">Concerts</a></li>
+            <li id="sli1"><a href="#login">LOGIN</a></li>
+            <li id="sli2"><a href="#DemonSlayerFanpage">Arctic Monkeys Fanpage</a></li>
+        </ul>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="img1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img2.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img3.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img4.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img5.jpg" style="width:100%">
+        </div>
+
+        <!-- next and prev button-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div><br>
+
+    <!-- dots/circles -->
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div><br>
+
+    <div class="class3">
+        <h2>About Us</h2>
+        <img src="OIP.jpeg" alt="arctic monkeys">
+        <p>
+            The Arctic Monkeys, an English rock band formed in Sheffield in 2002, have become one of the most influential bands of the 21st century. Known for 
+            their electrifying live performances and innovative sound, they burst onto the music scene with their debut album "Whatever People Say I Am, 
+            That's What I'm Not," which became the fastest-selling debut album in UK chart history. Their music seamlessly blends elements of indie rock, 
+            post-punk revival, and garage rock, characterized by Alex Turner's clever lyrics and distinctive vocal style. Over the years, the Arctic Monkeys 
+            have evolved their sound with albums like "AM," which incorporated hip-hop beats and R&B influences, earning them critical acclaim and a global 
+            fanbase. Their ability to continually reinvent themselves while maintaining their unique identity has solidified their status as modern rock 
+            icons.
+        </p>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

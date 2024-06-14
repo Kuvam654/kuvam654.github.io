@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arctic Monkeys Fanpage</title>
+        <style>
+            /* Pseudo-class styles must be in CSS */
+            .class1 #uli li a:hover:not(.active) {
+                background-color: #111;
+            }
+            .class1 ul li#sli2 a:hover:not(.active) {
+                background-color: #33B864;
+            }
+        </style>
+    </head>
+    <body onload="func1()">
+        <div class="class1">
+            <h1>Arctic Monkeys Fanpage</h1><br>
+            <ul id="ul1">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#manga">Manga</a></li>
+                <li><a href="#anime">Anime</a></li>
+                <li id="sli1"><a href="#discussionforum">Discussion Forum</a></li>
+                <li id="sli2"><a href="#DemonSlayerFanpage">Arctic Monkeys Fanpage</a></li>
+            </ul><br>
+        </div><br>
+        <div id="class2"></div><br>
+        <script>
+            function func1() {
+                const change1 = document.querySelector(".class1 h1");
+                change1.style.color = "white";
+
+                const body1 = document.querySelector("body");
+                body1.style.backgroundColor = "black";
+
+                const change2 = document.querySelector("#ul1");
+                change2.style.listStyleType = "none";
+                change2.style.margin = 0;
+                change2.style.padding = 0;
+                change2.style.overflow = "hidden";
+                change2.style.backgroundColor = "#111";
+                change2.style.position = "fixed";
+                change2.style.top = 0;
+                change2.style.width = "100%";
+
+                const change3 = document.querySelector("#ul1 li");
+                change3.style.float = "left";
+
+                const change4 = document.querySelector("#sli1");
+                change4.style.float = "right";
+
+                const change5 = document.querySelector("#sli2");
+                change5.style.float = "none";
+                change5.style.textAlign = "center";
+
+                const change6 = document.querySelectorAll("#ul1 li a");
+                change6.forEach(a => {
+                    a.style.display = "block";
+                    a.style.color = "white";
+                    a.style.textAlign = "center";
+                    a.style.padding = "14px 16px";
+                    a.style.textDecoration = "none";
+                });
+
+                const class2 = document.getElementById("class2");
+                class2.style.marginLeft = "auto";
+                class2.style.marginRight = "auto";
+                class2.style.backgroundImage = "url('pic1.webp')";
+                class2.style.width = "50vw";
+                class2.style.height = "80vh";
+                class2.style.backgroundSize = "100% 100%";
+                class2.style.backgroundColor = "#051011"
+                class2.style.backgroundRepeat = "no-repeat";
+                class2.style.position = "relative";
+
+
+            }
+        </script>
+    </body>
+</html>

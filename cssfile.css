@@ -1,0 +1,158 @@
+body {
+    background-color: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.class1 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border: solid white;
+}
+
+.class1 #ul1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#ul1 li {
+    float: left;
+    margin: 0 10px;
+}
+
+.class1 ul #sli1 {
+    float: right;
+    padding-right: 18px;
+}
+
+.class1 ul li#sli2 {
+    float: none;
+    text-align: center;
+}
+
+#ul1 li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+}
+
+#ul1 li a:hover:not(.active) {
+    background-color: rgb(81, 79, 79);
+}
+
+.class1 ul li#sli2 a:hover:not(.active) {
+    background-color: black;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 870px; /* Adjust the height as needed */
+    padding-top: 50px; /* Adjust padding to ensure enough space */
+    margin: 0; /* Ensure no margin is added */
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    height: 100%; /* Ensure images take the full height of the container */
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%; /* Make sure images fit the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.class3 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #313333;
+    height: 46vh;
+    width: 60vw;
+}

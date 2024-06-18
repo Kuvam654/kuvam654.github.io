@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TRIAL PAGE</title>
+    </head>
+    <body onload="func1(); func2();">
+        <div class = "class1">
+            <ul id = "ul1">
+                <li id = "li1"><a href = "#home">Home</a></li>
+                <li id = "li2"><a href = "#Songs">Songs</a></li>
+                <li id = "li3"><a href = "#ArcticMonkeys">Artic Monkeys</a></li>
+                <li id = "li4"><a href = "#Artist">Artist</a></li>
+            </ul>
+        </div><br>
+        <div id = "displaycontent" class="content"></div>
+        <script>
+            function func1() {
+                //get the unordered list
+                const ul = document.getElementById("ul1");
+
+                //style the navigation container
+                const navC = document.createElement("nav");
+                navC.style.backgroundColor = "#333";
+                navC.style.overflow = "hidden";
+
+                //append the list to the nav container
+                navC.appendChild(ul);
+                document.body.insertBefore(navC, document.body.firstChild);
+
+                //style the unordered list
+                ul.style.listStyleType = "none";
+                ul.style.margin = "0";
+                ul.style.padding = "0";
+                ul.style.display = "flex";
+
+                //style list items
+                const listitems = ul.getElementsByTagName("li");
+                for (let i = 0; i < listitems.length; i++) {
+                    listitems[i].style.float = "left";
+                }
+
+                //style anchor tags
+                const styleanchor = ul.getElementsByTagName("a");
+                for (let i = 0; i < styleanchor.length; i++) {
+                    if (i == 2) {
+                        styleanchor[i].style.display = "block";
+                        styleanchor[i].style.color = "green";
+                        styleanchor[i].style.textAlign = "center";
+                        styleanchor[i].style.padding = "14px 20px";
+                        styleanchor[i].style.textDecoration = "none";
+                        styleanchor[i].onmouseover = function() {
+                            this.style.backgroundColor = "#333";
+                        }
+                        styleanchor[i].onmouseout = function() {
+                            this.style.backgroundColor = "";
+                        }
+                    }
+                    else {
+                        styleanchor[i].style.display = "block";
+                        styleanchor[i].style.color = "green";
+                        styleanchor[i].style.textAlign = "center";
+                        styleanchor[i].style.padding = "14px 20px";
+                        styleanchor[i].style.textDecoration = "none";
+                        styleanchor[i].onmouseover = function() {
+                            this.style.backgroundColor = "#ddd";
+                            this.style.color = "black";
+                        }
+                        styleanchor[i].onmouseout = function() {
+                            this.style.backgroundColor = "";
+                            this.style.color = "green";
+                        }
+                    }
+
+                }
+
+                //style indivisual element of unordered list
+                const styleli1 = document.getElementById("li1");
+                const substyleli1 = document.querySelector("a");
+                substyleli1.style.color = "green";
+
+                const styleli4 = document.getElementById("li4");
+                styleli4.style.marginLeft = "auto";
+
+                const styleli3 = document.getElementById("li3");
+                styleli3.style.marginLeft = "auto";
+                
+                /*
+                links is a list of substyleli(1,2,3,4,5)
+                links.forEach(link => {
+                    link.style.color = "green";
+                })*/
+
+                //inserting image below
+                const imgsrc = "OIP.jpeg";
+                const img = document.createElement("img");
+                img.src = imgsrc;
+                img.style.display = "block";
+                img.style.margin = "0px auto";
+                img.style.width = "100%";
+                img.style.height = "auto";
+                document.body.insertBefore(img, document.body.firstChild.nextSibling);
+            }
+
+            function func2() {
+                const displayContent = document.getElementById("displaycontent");
+                const heading = [
+                    "Image 1/5",
+                    "Image 2/5",
+                    "Image 3/5",
+                    "Image 4/5",
+                    "Image 5/5"
+                ];
+                const images = [
+                    "img1.jpg",
+                    "img2.jpeg",
+                    "img3.jpeg",
+                    "img4.jpg",
+                    "img5.jpg"
+                ]
+                const texts = [
+                    "img1",
+                    "img2",
+                    "img3",
+                    "img4",
+                    "img5"
+                ]
+                let currentIndex = 0;
+
+                function changeContent() {
+                    displayContent.innerHTML = `
+                    <h2 style = "display : "block"; width : "100px"; height : "100px";>${heading[currentIndex]}</h2>
+                    <img src = "${images[currentIndex]}" alt = "Image ${currentIndex + 1}">
+                    <p style = "text-align: "center;">${texts[currentIndex]}</p>
+                    `;
+
+                    currentIndex = (currentIndex+1)%heading.length;
+                    setTimeout(changeContent, 5000);
+                }
+
+                changeContent();
+
+                
+            }
+        </script>
+    </body>
+</html>
